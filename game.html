@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/uikit.min.css">
+    <link rel="stylesheet" href="css/Animate.css">
+</head>
+
+<body>
+    
+    <div>
+        <h3>請出拳</h3>
+        <button id="scissors" value="2">剪刀</button>
+        <button id="stone" value="1">石頭</button>
+        <button id="paper" value="3">布</button>
+    </div>
+    <br>
+    <div>
+        <span>您出拳:</span>
+        <span id="choice"></span>
+    </div>
+    <br>
+    <div>
+        <span>電腦出拳:</span>
+        <span id="show"></span>
+    </div>
+    <br>
+    <div>
+        <span>結果:</span>
+        <span id="result"></span>
+    </div>
+    <br>
+    <div>
+        <span>比數:</span>
+        <span><span id="mycount"></span> : <span id="cpcount"></span></span>
+    </div>
+    <br>
+    <div>
+        <button id="clear">重新遊戲</button>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        let mycount = 0;
+        let cpcount = 0;
+        $("#scissors").click(function (e) {
+            e.preventDefault();
+            let computer1 = computer(show());
+            // console.log( computer1);
+            $('#choice').text("剪刀");
+            $('#show').text(computer1);
+            $('#result').text(result('剪刀', computer1));
+            $('#mycount').text(mycount);
+            $('#cpcount').text(cpcount);
+        });
+        $("#stone").click(function (e) {
+            e.preventDefault();
+            let computer1 = computer(show());
+            // console.log( computer1);
+            $('#choice').text("石頭");
+            $('#show').text(computer1);
+            $('#result').text(result('石頭', computer1));
+            $('#mycount').text(mycount);
+            $('#cpcount').text(cpcount);
+
+        });
+        $("#paper").click(function (e) {
+            e.preventDefault();
+            let computer1 = computer(show());
+            // console.log(computer1);
+            $('#choice').text("布");
+            $('#show').text(computer1);
+            $('#result').text(result('布', computer1));
+            $('#mycount').text(mycount);
+            $('#cpcount').text(cpcount);
+        });
+
+
+
+        function show() {
+            return Math.floor(Math.random() * 3 + 1);
+        }
+
+        function computer(e) {
+            let item = "";
+            if (e == '1') {
+                item = "剪刀";
+            } else if (e == '2') {
+                item = "石頭";
+            } else if (e == '3') {
+                item = "布";
+            }
+            return item;
+        }
+
+        function result(mine, computer) {
+            if ((mine == computer)) {
+                return '平手';
+            } else if (mine == '剪刀') {
+                if (computer == '布') {
+                    mycount++;
+                    return '你贏了';
+                } else {
+                    cpcount++;
+                    return '你輸了';
+                }
+
+            } else if (mine == '石頭') {
+                if (computer == '剪刀') {
+                    mycount++;
+                    return '你贏了';
+                } else {
+                    cpcount++;
+                    return '你輸了';
+                }
+            } else if (mine == '布') {
+                if (computer == '石頭') {
+                    mycount++;
+                    return '你贏了';
+                } else {
+                    cpcount++;
+                    return '你輸了';
+                }
+            }
+        }
+        $('#clear').click(function (e) {
+            e.preventDefault();
+            mycount = 0;
+            cpcount = 0;
+            $('#mycount').text(mycount);
+            $('#cpcount').text(cpcount);
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

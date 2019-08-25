@@ -1,0 +1,29 @@
+.paper {
+    border-style:dashed;
+    border-width:3px;
+    border-color:orange;
+    margin: 1%;
+    padding: 28% 0%;
+    height: 300px;
+    float: left;
+}
+
+.scissor {
+    border-style:dashed;
+    border-width:3px;
+    border-color:#BBFF00;
+    margin: 1%;
+    padding: 28% 0%;
+    height: 300px;
+    float: left;
+}
+
+.stone {
+    border-style:dashed;
+    border-width:3px;
+    border-color:#00AAAA;
+    margin: 1%;
+    padding: 28% 0%;
+    height: 300px;
+    float: left;
+}

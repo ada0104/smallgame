@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>遊戲網頁</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/uikit.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="paper">
+            <!-- <img src="photo/布.png" alt="paper"> -->
+            <img src="photo/圖片3.png" alt="">
+        </div>
+        <div class="scissor">
+            <img src="photo/圖片5.png" alt="">
+            <!-- <img id="ss" src="photo/剪刀.png" alt="scissor"> -->
+        </div>
+
+        <div class="stone">
+            <!-- <input type="image" src="photo/go.jpg" onclick="javascript:self.location.href='game.html'"></input> -->
+            <!-- <img src="photo/石頭.png" alt="stone"> -->
+            <img src="photo/圖片4.png" alt="">
+        </div>
+        <div>
+            <button class="btn btn-warning">
+                <a href="game.html">好!</a>
+            </button>
+        </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script>
+
+        $("div").animate({left: '+=100px'}, 2000);
+
+    </script>
+
+
+</body>
+
+</html>
